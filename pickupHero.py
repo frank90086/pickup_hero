@@ -10,8 +10,11 @@ def pickup():
     # constant
     bonus_full_hero = 60
     bonus_helf_hero = bonus_full_hero / 2
-    hero_spend = [["1⭐️", 60], ["2⭐️", 60], ["3⭐️", 120], ["4⭐️", 180], ["5⭐️", 240], ["1🔥", 120], ["2🔥", 120], ["3🔥", 180], ["4🔥", 180], ["5🔥", 240]]
+    hero_spend = np.array([["1⭐️", 60], ["2⭐️", 60], ["3⭐️", 120], ["4⭐️", 180], ["5⭐️", 240], ["1🔥", 120], ["2🔥", 120], ["3🔥", 180], ["4🔥", 180], ["5🔥", 240]], dtype=object)
     print(hero_spend)
+    print(hero_spend[:, 1])
+    print(np.sum(hero_spend[:, 1]))
+    print(hero_spend[pickup_hero_level, 0])
 
     # probability
     prob_pickup_full_hero = 0.03333
