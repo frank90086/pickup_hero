@@ -30,19 +30,20 @@ def pickup(n):
         step_full_hero -= 1
         step_half_hero -= 1
 
-        pick_out = np.random.choice([60, 0, 10, 0, 5, 0, 0], p = probs)
+        # get full hero bonus
+        if(step_full_hero == 0):
+            pick_out = bonus_full_hero
+        else:
+            pick_out = np.random.choice([60, 0, 10, 0, 5, 0, 0], p = probs)
 
         # reset if pick full hero
         if(pick_out == 60):
             step_full_hero = 30
 
-        # get full hero bonus
-        if(step_full_hero == 0):
-            fragments += bonus_full_hero
-
-        # get half hero bonus
+        # get half hero bonus and reset
         if(step_half_hero == 0):
             fragments += bonus_helf_hero
+            step_half_hero = 30
 
         fragments += pick_out
 
