@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-def pickup(n):
+def pickup():
     total_spend = 0
     fragments = 0
     pickup_hero_level = 0
